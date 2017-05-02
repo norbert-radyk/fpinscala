@@ -10,11 +10,11 @@ class Exercise_3_2_Spec extends FlatSpec with Matchers {
   }
 
   it should "return empty list for a single element list" in {
-    tail(Cons(7, Nil)) shouldBe Nil
+    tail(List(7)) shouldBe Nil
   }
 
   it should "return a list of all elements except the first one of the multi-element list" in {
-    tail(Cons(7, Cons(10, Cons(5, Nil)))) shouldBe Cons(10, Cons(5, Nil))
+    tail(List(7, 10, 5)) shouldBe List(10, 5)
   }
 
 }
