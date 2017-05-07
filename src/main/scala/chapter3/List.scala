@@ -10,6 +10,11 @@ object List {
     }
   }
 
+  def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B = as match {
+    case Nil => z
+    case Cons(x, xs) => f(x, foldRight(xs, z)(f))
+  }
+
 }
 
 sealed trait List[+A]
